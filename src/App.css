@@ -1,0 +1,244 @@
+/* ********Général*********
+************************ */
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.veve {
+  border: 2px solid red;
+  width: 100px;
+  height: 200px;
+}
+/* ************************ 
+********Header*********
+************************ 
+************************ */
+
+header {
+  height: 120px;
+  padding: 10px 0px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 104px;
+  height: 45px;
+  margin-right: 80px;
+}
+header input {
+  width: 625px;
+  height: 39px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f5f6f7;
+  /* color: #cbcccd; */
+}
+header button {
+  width: 115px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #2db0ba;
+  font-size: 12px;
+}
+.button-signup {
+  margin-right: 20px;
+}
+
+.button-signup,
+.button-login {
+  color: #2db0ba;
+  background-color: whitesmoke;
+}
+.button-sell {
+  color: #ffffff;
+  background-color: #2db0ba;
+}
+
+/* ************************ 
+********Main*********
+************************ 
+************************  */
+
+.img-hero {
+  width: 1440px;
+  height: 455px;
+  object-fit: cover;
+}
+main {
+  /* border: solid 2px red; */
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.article {
+  /* border: 1px solid blue; */
+  padding: 0px 6px 16px;
+  font-size: 12px;
+  color: grey;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: grey;
+  padding-bottom: 5px;
+}
+.avatar-img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 9px;
+}
+.avatar-img-offer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.img-offers {
+  width: 235px;
+  height: 426px;
+  object-fit: cover;
+}
+.offer-info-avatar {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.img-product-offer {
+  width: 455px;
+  height: 605px;
+  object-fit: cover;
+}
+.offer-part-right {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 605px;
+  padding: 40px;
+  background-color: white;
+}
+.veve2 {
+  /* border: 1px solid red; */
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.veve2 :first-child {
+  /* border: 1px solid blue; */
+  font-size: 14px;
+  color: grey;
+}
+.veve2 :nth-child(2) {
+  /* border: 1px solid blue; */
+  font-size: 14px;
+  font-weight: bold;
+  color: grey;
+}
+.main-offer {
+  /* border: 2px solid rebeccapurple; */
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+.offer-part-top {
+  /* border: 2px solid yellow; */
+  width: 320px;
+  height: 167px;
+  line-height: 20px;
+}
+.offer-price {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.offer-part-bottom :nth-child(1) {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.offer-part-bottom :nth-child(2) {
+  font-size: 18px;
+  color: grey;
+  margin-bottom: 15px;
+}
+.button-offer {
+  width: 320px;
+  height: 36px;
+  border-radius: 5px;
+  border: none;
+  background-color: #09b0ba;
+  color: white;
+}
+.offer-body {
+  background-color: #eaedee;
+  height: calc(100vh - 70px);
+}
+
+/* *******Signup******** */
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+form {
+  /* border: 2px solid blue; */
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+form > input {
+  width: 275px;
+  height: 38px;
+  border: none;
+  border-bottom: 1px solid #fcced2;
+}
+form label {
+  color: grey;
+}
+form p {
+  font-size: 12px;
+  line-height: 13px;
+  color: grey;
+  padding-left: 10px;
+}
+form button {
+  width: 275px;
+  height: 45px;
+  background-color: #09b0ba;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* *******Login******** */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.login-form > form {
+  height: 181px;
+  display: flex;
+  justify-content: space-between;
+}
