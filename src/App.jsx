@@ -18,6 +18,7 @@ const stripePromise = loadStripe(
 
 const App = () => {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
 
   const handleToken = (token) => {
     if (token) {
@@ -28,6 +29,10 @@ const App = () => {
       setUserToken(null);
     }
   };
+  const handleId = (id) => {
+    Cookies.set("userId", id);
+    setUserId(id);
+  };
   return (
     <Router>
       <Header handleToken={handleToken} userToken={userToken} />
@@ -36,7 +41,7 @@ const App = () => {
         <Route path="/offers/:id" element={<Offer />}></Route>
         <Route
           path="/signup"
-          element={<Signup handleToken={handleToken} />}
+          element={<Signup handleToken={handleToken} handleId={handleId} />}
         ></Route>
         <Route
           path="/login"
@@ -50,7 +55,7 @@ const App = () => {
           path="/payment"
           element={
             <Elements stripe={stripePromise}>
-              <Payment />
+              <Payment userId={userId} />
             </Elements>
           }
         ></Route>

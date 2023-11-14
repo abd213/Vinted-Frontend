@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = ({ handleToken }) => {
+const Signup = ({ handleToken, handleId }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
@@ -24,6 +25,7 @@ const Signup = ({ handleToken }) => {
 
         console.log(response);
         handleToken(response.data.token);
+        handleId(response.data._id);
         navigate("/");
       };
       fetchData();
@@ -33,8 +35,8 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <div className="container signup-form">
-      <form onSubmit={handleSubmit}>
+    <div className="container content">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <h1>S'inscrire</h1>
         <input
           type="text"

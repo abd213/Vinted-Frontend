@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo-vinted.png";
+import axios from "axios";
 
 const Header = ({ userToken, handleToken }) => {
   return (

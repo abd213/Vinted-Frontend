@@ -18,7 +18,7 @@ const Offer = () => {
         const response = await axios.get(
           `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -76,7 +76,15 @@ const Offer = () => {
               <span>{data.owner.account.username}</span>
             </div>
           </div>
-          <Link to="/payment">
+          <Link
+            to="/payment"
+            state={{
+              name: data.owner.account.username,
+              description: data.product_description,
+              product_name: data.product_name,
+              price: data.product_price,
+            }}
+          >
             <button className="button-offer">Acheter</button>
           </Link>
         </div>
