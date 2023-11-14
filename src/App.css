@@ -242,3 +242,9 @@ form button {
   display: flex;
   justify-content: space-between;
 }
+
+/* *******Publish******** */
+
+.uploadFile {
+  border: 1px solid black;
+}

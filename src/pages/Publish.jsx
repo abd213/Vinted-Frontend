@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ userToken }) => {
   const [title, setTitle] = useState("");
@@ -25,7 +26,7 @@ const Publish = ({ userToken }) => {
       formData.append("size", size);
       formData.append("color", color);
       formData.append("condition", condition);
-      formData.append("location", location);
+      formData.append("city", location);
       formData.append("price", price);
       formData.append("picture", file);
 
@@ -39,29 +40,29 @@ const Publish = ({ userToken }) => {
           },
         }
       );
-      console.log(response);
+      console.log(response.data.product_image.secure_url);
+      setPictureFromCloudinary(response.data.product_image.secure_url);
     } catch (error) {
       console.log(error);
     }
   };
 
-  return (
-    <div>
+  return userToken ? (
+    <div className="container">
       <h1>Vends ton article</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="uploadFile">
           <input
             type="file"
             onChange={(event) => {
               console.log(event.target.files[0]);
               setFile(event.target.files[0]);
+              URL.createObjectURL(event.target.files[0]);
             }}
           />
-          {/* {file && (
-            <div>
-              <img className="veve" src={file} alt="" />
-            </div>
-          )} */}
+          {file && (
+            <img className="veve" src={URL.createObjectURL(file)} alt="" />
+          )}
         </div>
         <div>
           <label htmlFor="title">
@@ -80,7 +81,7 @@ const Publish = ({ userToken }) => {
           </label>
           <label htmlFor="description">
             Description de l'article
-            <input
+            <textarea
               type="text"
               placeholder="ex: porté seulement quelque fois..."
               name="description"
@@ -162,7 +163,7 @@ const Publish = ({ userToken }) => {
           <label htmlFor="price">
             Prix
             <input
-              type="text"
+              type="number"
               placeholder="0,00 €"
               name="price"
               value={price}
@@ -189,6 +190,8 @@ const Publish = ({ userToken }) => {
         </div>
       </form>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 export default Publish;
